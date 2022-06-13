@@ -1,0 +1,12 @@
+type Booking {
+	bid: ID!
+	busNo: Int!
+	pid: Int!
+	price: Float!
+}
+
+# Root
+type Query {
+	findAllBooking: [Booking]!
+}
+

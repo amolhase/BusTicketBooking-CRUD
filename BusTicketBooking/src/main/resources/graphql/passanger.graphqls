@@ -1,0 +1,32 @@
+type Passanger {
+	pid: ID!
+	name: String!
+	address: String!
+	age: Int
+}
+
+type Booking {
+	bid: ID!
+	busNo: Int!
+	pid: Int!
+	price: Float!
+}
+
+
+# Root
+type Query {
+	findAllPassanger: [Passanger]!
+	findAllBooking : [Booking]!
+}
+
+# Root
+type Mutation {
+	createPassanger(name: String!,address: String!, age: Int!): Passanger!
+	deletePassanger(pid: ID!): Boolean
+	updatePassanger(pid: ID!, name: String, address: String, age: Int): Passanger!
+	createBooking(busNo: Int!, pid: Int!, price: Float!): Booking!
+	deleteBooking(bid: ID!): Boolean
+	updateBooking(bid: ID!, busNo: Int, pid: Int, price: Float): Booking!
+}
+
+

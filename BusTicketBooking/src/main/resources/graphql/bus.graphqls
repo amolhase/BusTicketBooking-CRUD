@@ -1,0 +1,18 @@
+type Bus {
+	busNo: ID!
+	startLoc: String!
+	destination: String!
+	noOfSeats: Int
+}
+
+# Root
+type Query {
+	findAllBus: [Bus]!
+}
+
+# Root
+type Mutation {
+	createBus(startLoc: String!,destination: String!, noOfSeats: Int!): Bus!
+	deleteBus(busNo: ID!): Boolean
+	updateBus(busNo: ID!, startLoc: String, destination: String, noOfSeats: Int): Bus!
+}
